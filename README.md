@@ -25,9 +25,29 @@ python roundplay_info_fetcher.py <room_id> --save_dir results --sleep_sec 60
 python gen_roundplay_video_list.py --fetch_folder results/<room_id> --sleep_sec 2
 ```
 
+## 文件说明
+
+录播列表存储在`results/<room_id>`下，包括：
+
+- `<datetime>.txt.gz`: 累积的当前录播视频查询结果
+- `video_info.txt`: 累积的录播视频信息
+- `roundplay_seq.txt`: 录播列表，各列分别为`[在录播列表内的序号(从1开始), BV号, 分P序号, 视频时长(秒), URL, 视频标题]`
+
 ## 示例CLI程序：读取轮播列表和视频信息，预测未来给定时间的轮播视频
 
 ```bash
-# 默认输入时间为北京时间
+# 默认输入时间为北京时间，格式<yyyy-mm-dd-HH-MM>
 python predict_roundplay_video.py <room_id> <%Y-%m-%d-%H-%M> --fetch_folder results/<room_id>
+```
+
+输入输出示例:
+
+```bash
+python predict_roundplay_video.py 21602686 "2021-03-08-19-00" --fetch_folder results/21602686
+--------------------------------------------------------------------------------------------------------------
+bvid: BV1zg4y1q7mc
+pid: 1
+title: BV1zg4y1q7mc-【2020.06.12录播】夏日大作战-P1
+time: 63:5
+url: https://www.bilibili.com/video/BV1zg4y1q7mc?p=1&t=3785
 ```
