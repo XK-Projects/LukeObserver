@@ -24,7 +24,7 @@ def predict_roundplay_video(room_id, dt, seq_dict):
 
     x = datetime.now()
     x = x.replace(tzinfo=x.astimezone().tzinfo)
-    # after_time = (datetime(2021, 3, 5, 19, 0, 0, 0, tzinfo=pytz.timezone('Asia/Shanghai')) - x).seconds
+    assert (dt >= x), 'Time to predict should be later than the current time!\nCurrent time: {}\nTime to predict: {}'.format(x, dt)
     after_time = int((dt - x).total_seconds())
 
     sum_play_time = after_time + play_time

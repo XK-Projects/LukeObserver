@@ -36,7 +36,7 @@ python gen_roundplay_video_list.py --fetch_folder results/<room_id> --sleep_sec 
 ## 示例CLI程序：读取轮播列表和视频信息，预测未来给定时间的轮播视频
 
 ```bash
-# 默认输入时间为北京时间，格式<yyyy-mm-dd-HH-MM>
+# 默认输入时间为北京时间，格式<yyyy-mm-dd-HH-MM>，必须晚于当前时间
 python predict_roundplay_video.py <room_id> <%Y-%m-%d-%H-%M> --fetch_folder results/<room_id>
 ```
 
