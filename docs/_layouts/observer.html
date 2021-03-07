@@ -67,6 +67,27 @@
         var roundplay_seq;
         var max_seq_num;
 
+        function fill_video_list() {
+            var video_list = document.getElementById("video_row");
+            var inner_html = "";
+            for (var i = 1; i <= max_seq_num; ++i) {
+                var vtime = "";
+                var vlink = "";
+                if (i in roundplay_seq) {
+                    var vinfo = roundplay_seq[i.toString()];
+                    var vsec = vinfo.duration;
+                    vtime = Math.floor(vsec / 60) + ":" + (vsec % 60).toString().padStart(2, "0");
+                    vlink = "<a href=\"" + vinfo.video_url + "\">" + vinfo.title + "</a>";
+                } else {
+                    vtime = "未知";
+                    vlink = "未知";
+                }
+                var rowstr = "<tr><td>" + i.toString() + "</td><td>" + vtime + "</td><td>" + vlink + "</td></tr>";
+                inner_html += rowstr;
+            }
+            video_list.innerHTML = inner_html;
+        }
+
         function load_data() {
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {
@@ -78,6 +99,7 @@
                         return parseInt(x, 10);
                     });
                     max_seq_num = Math.max(...seq_nums);
+                    fill_video_list();
                 }
             }
             xhttp.open("GET", "assets/rplist/21602686/roundplay_seq.json", true);
@@ -167,7 +189,7 @@
             var to_play_ts_m = Math.floor(to_play_ts / 60);
             var to_play_ts_s = to_play_ts % 60;
             rptime_str = selected_date.format();
-            rplink_str = to_play_ts_m.toString() + ":" + to_play_ts_s.toString().padStart(2, "0") + "    " + to_play.title;
+            rplink_str = "[" + seq_i.toString() + "][" + to_play_ts_m.toString() + ":" + to_play_ts_s.toString().padStart(2, "0") + "]    " + to_play.title;
             rplink_url = to_play.video_url + "&t=" + to_play_ts.toString();
             document.getElementById("rptime").innerHTML = rptime_str;
             document.getElementById("rplink").innerHTML = "<a href=\"" + rplink_url + "\">" + rplink_str + "</a>";

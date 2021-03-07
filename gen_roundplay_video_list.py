@@ -81,6 +81,7 @@ def main(args):
     for k, (bvid, pid, title) in seq_dict.items():
         video_info = json.loads(video_dict[bvid])
         duration = video_info['data']['pages'][pid - 1]['duration']
+        title = video_info['data']['title']
         video_url = 'https://www.bilibili.com/video/{}?p={}'.format(bvid, pid)
         seq_dict_with_du[k] = {
             'bvid': bvid, 'pid': pid, 'duration': duration,

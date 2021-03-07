@@ -5,7 +5,9 @@
 layout: observer
 ---
 
-给录萪选个时间:
+# 录萪观测者
+
+你想什么时候去看录萪?
 
 <input class="flatpickr flatpickr-input" type="text" placeholder="看录萪的时间..." data-id="datetime"
         readonly="readonly" id="dtpicker">
@@ -22,5 +24,19 @@ layout: observer
       <td id="rptime"></td>
       <td id="rplink"></td>
     </tr>
+  </tbody>
+</table>
+
+# 轮播列表
+
+<table>
+  <thead>
+    <tr>
+      <th>轮播序号</th>
+      <th>时长</th>
+      <th>视频</th>
+    </tr>
+  </thead>
+  <tbody id="video_row">
   </tbody>
 </table>
