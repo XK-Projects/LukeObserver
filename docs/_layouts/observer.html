@@ -149,6 +149,7 @@
                         }
                     }
                     summed_play_time += roundplay_seq[seq_i.toString()]["duration"];
+                    // console.log(seq_i, roundplay_seq[seq_i.toString()]['duration'], summed_play_time, sum_play_time);
                     if (summed_play_time > sum_play_time) {
                         break;
                     }
@@ -157,6 +158,7 @@
                         seq_i = max_seq_num;
                     }
                 }
+                // console.log(" ");
 
                 var to_play = roundplay_seq[seq_i.toString()];
                 to_play_ts = summed_play_time - sum_play_time;

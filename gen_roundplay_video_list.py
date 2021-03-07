@@ -120,6 +120,6 @@ if __name__ == '__main__':
     args = parser.parse_args()
     
     args.fetch_folder = os.path.join('results', str(args.room_id))
-    args.site_folder = os.path.join('site', 'assets', 'rplist', str(args.room_id))
+    args.site_folder = os.path.join('docs', 'assets', 'rplist', str(args.room_id))
     
     main(args)
