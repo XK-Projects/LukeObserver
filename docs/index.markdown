@@ -5,16 +5,16 @@
 layout: observer
 ---
 
-Datetime Picker:
+给录萪选个时间:
 
-<input class="flatpickr flatpickr-input" type="text" placeholder="Select Date.." data-id="datetime"
+<input class="flatpickr flatpickr-input" type="text" placeholder="看录萪的时间..." data-id="datetime"
         readonly="readonly" id="dtpicker">
 
 <table>
   <thead>
     <tr>
       <th>时间</th>
-      <th>录播</th>
+      <th>录萪在放...</th>
     </tr>
   </thead>
   <tbody>

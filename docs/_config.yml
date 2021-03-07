@@ -22,7 +22,7 @@ title: 录萪观察者
 email: 
 # description: >- # this means to ignore newlines until "baseurl:"
 #   预测录萪会播什么
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/LukeObserver" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
