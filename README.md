@@ -1,4 +1,4 @@
-# 录萪观察者 (LukeObserver)
+# 录萪观测者 (LukeObserver)
 
 收集Bilibili直播间的轮播列表并预测未来给定时间录播播放的视频。
 
@@ -31,7 +31,7 @@ python gen_roundplay_video_list.py <room_id>
 
 - `<datetime>.txt.gz`: 累积的当前录播视频查询结果
 - `video_info.txt`: 累积的录播视频信息
-- `roundplay_seq.txt`: 录播列表，各列分别为`[在录播列表内的序号(从1开始), BV号, 分P序号, 视频时长(秒), URL, 视频标题]`
+- `roundplay_seq.json`: 录播列表，包括`[在录播列表内的序号(从1开始), BV号, 分P序号, 视频时长(秒), URL, 视频标题]`
 
 ## 示例CLI程序：读取轮播列表和视频信息，预测未来给定时间的轮播视频
 
